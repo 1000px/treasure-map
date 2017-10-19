@@ -1,0 +1,34 @@
+{
+  "name": "treasure-map",
+  "version": "0.0.1",
+  "description": "treasure map taobao china province",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack",
+    "server": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1000px/treasure-map.git"
+  },
+  "keywords": [
+    "treasure",
+    "map",
+    "taobao",
+    "webpack"
+  ],
+  "author": "1000px",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1000px/treasure-map/issues"
+  },
+  "homepage": "https://github.com/1000px/treasure-map#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.2"
+  }
+}
