@@ -74,6 +74,42 @@
 			hongkong: '香港', 
 			taiwan: '台湾', 
 			macau: '澳门'
+		},
+		weight: {
+			heilongjiang: 100,
+			jilin: 2, 
+			liaoning: 3, 
+			hebei: 4, 
+			shandong: 5, 
+			jiangsu: 6, 
+			zhejiang: 7, 
+			anhui: 8, 
+			henan: 9, 
+			shanxi: 10, 
+			shaanxi: 11, 
+			gansu: 12, 
+			hubei: 13, 
+			jiangxi: 14, 
+			fujian: 15, 
+			hunan: 16, 
+			guizhou: 17, 
+			sichuan: 18, 
+			yunnan: 19, 
+			qinghai: 20, 
+			hainan: 21, 
+			shanghai: 22, 
+			chongqing: 23, 
+			tianjin: 24, 
+			beijing: 25, 
+			ningxia: 26, 
+			neimongol: 27, 
+			guangxi: 28, 
+			xinjiang: 29, 
+			xizang: 30, 
+			guangdong: 31, 
+			hongkong: 32, 
+			taiwan: 33, 
+			macau: 34
 		}
 	}
 
@@ -102,8 +138,13 @@
 	}
 
 	// 私有工具函数
+	// 初始化地图
 	function _initShapes() {
 		_trMap.svg.innerHTML = '';
+		var weightSum = 0;
+		for(var province in config.weight) {
+			weightSum += config.weight[province];
+		}
 		for(var item in config.shapes) {
 			var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
 			path.setAttribute('d', config.shapes[item]);
@@ -111,10 +152,24 @@
 			path.setAttribute('data-type', 'province');//类型
 			path.setAttribute('data-province', item);//省份name
 			path.setAttribute('data-province_name', config.names[item]);//省份名称
-			path.setAttribute('fill', '#fff');
+			path.setAttribute('fill', '#' + _toColorString(config.weight[item] / weightSum));
 			_trMap.svg.appendChild(path);
 		}
 	}
-	
+
+	// 百分比转颜色 intVal:进制转换的数值 radix:需要转的进制
+	function _toColorString(pencentVal) {
+		console.log(pencentVal);
+		var str16 = 2096 + 680 * pencentVal;
+		str16 = parseInt(str16).toString(16);
+		str16.length === 1 && (str16 = '00' + str16);
+		str16.length === 2 && (str16 = '0' + str16);
+		// console.log(str16);
+		// 返回值为组装好的3位16进制字符串
+		return str16;
+	}
+
+	// 
+
 	window.TreasureMap = TreasureMap;
 })(window);
