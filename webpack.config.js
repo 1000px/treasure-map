@@ -1,8 +1,9 @@
+import path from 'path'
 module.exports = {
 	devtool: 'eval-source-map',
 	entry: __dirname + '/script/main.js',
 	output: {
-		path: __dirname + '/dist',
+		path: '/dist',
 		filename: 'bundle.js'
 	},
 	devServer: {

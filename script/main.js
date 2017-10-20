@@ -1,4 +1,4 @@
-import TreasureMap from './svg-map.js'
+import TreasureMap from './map.js'
 
 window.onload = function () {
 	var map = document.getElementById('map');
