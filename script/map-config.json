@@ -109,5 +109,10 @@
 		"hongkong": 32, 
 		"taiwan": 33, 
 		"macau": 1
+	}, 
+	"opts": {
+		"border": "#ccc", 
+		"hover": "#f0f",
+		"active": "#ff0"
 	}
 }
