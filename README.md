@@ -1,14 +1,42 @@
-## 项目概述
-> 藏宝图项目前端页面逻辑开发
+# vue-standard
 
-### 项目名称
-> 藏宝图 treasure-map
-> 网址 神奇藏宝图 www.sqcbt.com
+> A Vue.js project
 
-### 项目部署
-* 安装git & git bash:软件安装
-* 拉取代码: git clone https://github.com/1000px/treasure-map.git
-* 安装node:软件安装 
-* 安装cnpm: npm install -g cnpm --registry=https://registry.npm.taobao.org 
-* 安装项目依赖: cnpm install
-* 启动本地服务: cnpm run server
+## Build Setup
+
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
+
+# run unit tests
+npm run unit
+
+# run e2e tests
+npm run e2e
+
+# run all tests
+npm test
+```
+
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+# 实现
+  lang 后端请求（需要跟后端定义文件名）、默认设置
+  config
+  service
+  router
+  store
+  引入normalize.css
+# 遇到问题
+1、this.Logger.log() 会在打包的时候出现很多空函数 function() {}
+2、引用方式不一致 this.Logger.log() utils.Logger.log()
+3、关于ajax请求语言包的形式，先赋值默认，而后覆盖还是？
